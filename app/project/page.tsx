@@ -2,7 +2,11 @@ import { fetchProject } from "@/actions/actions";
 import FadeUpWhenVisible from "@/components/animations/FadeUpWhenVisible"
 import ProjectList from "@/components/project/ProjectList"
 import { ProjectProps } from "@/utils/type";
-
+import { Metadata } from "next";
+export const metadata: Metadata = {
+  title: "Krisapat Portfolio | Project",
+  description: "Krisapat Portfolio Project Page",
+};
 const Project = async () => {
   const project: ProjectProps[] = await fetchProject();
     if (project.length === 0) {

@@ -11,7 +11,11 @@ import { Shield } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import FadeUpWhenVisible from "@/components/animations/FadeUpWhenVisible"
 import AddProjectBreadcrumb from "@/components/settings/settingsComponents/AddProjectBreadcrumb"
-
+import { Metadata } from "next"
+export const metadata: Metadata = {
+  title: "Krisapat Portfolio | Add Project",
+  description: "Krisapat Portfolio Add Project Page",
+};
 const Addproject = async () => {
   const user = await currentUser()
   if (!user?.privateMetadata?.isAdmin) redirect("/")

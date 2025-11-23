@@ -4,8 +4,12 @@ import TypingHeader from "@/components/animations/TypingHeader"
 import ContactSection from "@/components/home/ContactSection"
 import { stacks } from "@/utils/stack"
 import { words } from "@/utils/words"
+import { Metadata } from "next"
 import Image from "next/image"
-
+export const metadata: Metadata = {
+  title: "Krisapat Portfolio | About",
+  description: "Krisapat Portfolio About Page",
+};
 const About = () => {
   return (
     <main className="space-y-10">

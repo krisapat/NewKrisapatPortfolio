@@ -27,7 +27,7 @@ export default function LatestProjectsSection({ children }: { children: React.Re
                     640: { slidesPerView: 2 },
                     1024: { slidesPerView: 3 },
                 }}
-                className="pb-2!" // ข้อ 3: ขยับ pagination ลงมา
+                className="pb-2! h-100"
             >
                 {Array.isArray(children) &&
                     children.map((child, index) => (

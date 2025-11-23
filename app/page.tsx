@@ -2,13 +2,17 @@ import { fetchProject } from "@/actions/actions"
 import FadeUpWhenVisible from "@/components/animations/FadeUpWhenVisible"
 import ScrollTicker from "@/components/animations/ScrollTicker"
 import ContactSection from "@/components/home/ContactSection"
-import LatestProjectsSection from "@/components/home/LatestProjectsSection"
 import LatestProjectsWrapper from "@/components/home/LatestProjectsWrapper"
 import Reorder from "@/components/home/Reorder"
 import { Button } from "@/components/ui/button"
 import { ProjectProps } from "@/utils/type"
+import { Metadata } from "next"
 import Image from "next/image"
 import Link from "next/link"
+export const metadata: Metadata = {
+  title: "Krisapat Portfolio | Home",
+  description: "Krisapat Portfolio Home Page",
+};
 const headImages = [
   "/img/head/head1.png",
   "/img/head/head2.png",
@@ -23,7 +27,7 @@ const Page = async () => {
     <main className="-mt-5 sm:-my-15">
       {/* hero section */}
       <FadeUpWhenVisible>
-        <section className="min-h-screen w-full flex flex-col justify-center items-center text-center 
+        <section className=" min-h-screen w-full flex flex-col justify-center items-center text-center 
       bg-lineart-to-b from-[#00c950]/20 via-[#00aaff]/10 to-transparent space-y-6">
           {/* Title */}
           <h1 className="font-extrabold text-4xl md:text-6xl leading-tight">
@@ -58,7 +62,8 @@ const Page = async () => {
           items={images.map((img, index) => (
             <div className="
                 ml-5 my-5 rounded-lg p-px
-               bg-black dark:bg-white 
+               bg-white/70 
+        dark:bg-gray-800/60
               ">
               <Image
                 key={index}
