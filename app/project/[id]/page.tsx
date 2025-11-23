@@ -8,9 +8,10 @@ import { Metadata } from "next"
 
 // 1) ทำ dynamic metadata ตรงนี้
 export async function generateMetadata(
-    { params }: { params: { id: string } }
+    { params }: { params: Promise<{ id: string }> }
 ): Promise<Metadata> {
-    const project = await fetchProjectDetail({ id: params.id })
+    const { id } = await params
+    const project = await fetchProjectDetail({ id })
     const { name } = project as ProjectProps
     if (!project) {
         return {
@@ -25,10 +26,10 @@ export async function generateMetadata(
     }
 }
 
-// 2) ส่วน component หลัก ต้อง return JSX เท่านั้น
-export default async function ProjectDetail({ params }: { params: { id: string } }) {
-    const project = await fetchProjectDetail({ id: params.id })
-
+export default async function ProjectDetail({ params }: { params: Promise<{ id: string }> }) {
+    const { id } = await params
+    const project = await fetchProjectDetail({ id })
+    console.log(params)
     if (!project) redirect("/project")
 
     const { name, descriptionCard, descriptionDetail, image, demoLink } = project as ProjectProps
