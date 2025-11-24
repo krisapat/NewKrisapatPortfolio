@@ -37,7 +37,6 @@ export default async function ProjectDetail({ params }: { params: Promise<{ id: 
     return (
         <section>
             <ProjectBreadcrumb name={name} />
-
             <div className="group relative mt-6">
                 <Card className="relative overflow-hidden backdrop-blur bg-white/70 dark:bg-gray-800/60 shadow-lg 
           transition-shadow duration-300 group-hover:shadow-[0_0_20px_rgba(0,201,80,0.3)] p-6">
