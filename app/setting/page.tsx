@@ -1,3 +1,4 @@
+import { getData } from "@/actions/actions"
 import FadeUpWhenVisible from "@/components/animations/FadeUpWhenVisible"
 import AddProjectSection from "@/components/settings/AddProjectSection"
 import DarkmodeSection from "@/components/settings/DarkmodeSection"
@@ -9,6 +10,7 @@ export const metadata: Metadata = {
   description: "Krisapat Portfolio Setting Page",
 };
 const SettingPage = async () => {
+    const data = await getData();
     const user = await currentUser()
     const isAdmin = user?.privateMetadata?.isAdmin === true
     return (

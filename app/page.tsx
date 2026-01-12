@@ -1,4 +1,4 @@
-import { fetchProject } from "@/actions/actions"
+import { fetchProject, getData } from "@/actions/actions"
 import FadeUpWhenVisible from "@/components/animations/FadeUpWhenVisible"
 import ScrollTicker from "@/components/animations/ScrollTicker"
 import ContactSection from "@/components/home/ContactSection"
@@ -19,7 +19,9 @@ const headImages = [
   "/img/head/head3.png",
   "/img/head/head4.png",
 ]
+
 const Page = async () => {
+  const data = await getData();
   const project: ProjectProps[] = await fetchProject();
   const latest5 = project.slice(0, 5);
   const images = latest5.map(p => p.image);
@@ -79,7 +81,7 @@ const Page = async () => {
           speedFactor={10}
         />
       </section>
-      <section className="mt-10 flex flex-col space-y-4">
+      <section className="mt-10 py-10 flex flex-col space-y-4">
         <h2 className="text-2xl md:text-3xl font-bold text-center">
           ตัวอย่างโปรเจค
         </h2>

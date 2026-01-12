@@ -1,4 +1,4 @@
-import BtcTicker from "@/components/about/BtcTicker"
+import { getData } from "@/actions/actions"
 import Stack from "@/components/about/Stack"
 import FadeUpWhenVisible from "@/components/animations/FadeUpWhenVisible"
 import TypingHeader from "@/components/animations/TypingHeader"
@@ -11,7 +11,8 @@ export const metadata: Metadata = {
   title: "Krisapat Portfolio | About",
   description: "Krisapat Portfolio About Page",
 };
-const About = () => {
+const About = async () => {
+  const data = await getData();
   return (
     <main className="space-y-10">
       <FadeUpWhenVisible>
@@ -59,18 +60,6 @@ const About = () => {
           ช่องทางการติดต่อ
         </h2>
         <ContactSection />
-      </section>
-      <section className="space-y-4">
-        <FadeUpWhenVisible>
-          <h2 className="text-2xl md:text-3xl text-center">
-            ความสนใจ
-          </h2>
-          <p className="text-gray-600 dark:text-gray-300 leading-relaxed text-center">
-            ผมชอบใน Bitcoin เพราะมองว่าเป็นสินทรัพย์ที่สามารถป้องกันเงินเฟ้อ,มีจำนวนจำกัดและขนย้ายได้ง่าย<br />
-            นอกจากนี้การที่ผมใช้ BITKUB ในการซื้อและเก็บออม BTC ทุกเดือนทำให้ผมอยากเป็นส่วนหนึ่งของทีมที่จะพัฒนา BITKUB ให้ดียิ่งขึ้นไปอีก
-          </p>
-        </FadeUpWhenVisible>
-        <BtcTicker />
       </section>
     </main>
   )

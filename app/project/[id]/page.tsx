@@ -1,4 +1,4 @@
-import { fetchProjectDetail } from "@/actions/actions"
+import { fetchProjectDetail, getData } from "@/actions/actions"
 import { redirect } from "next/navigation"
 import Image from "next/image"
 import { Card, CardHeader, CardTitle } from "@/components/ui/card"
@@ -27,6 +27,7 @@ export async function generateMetadata(
 }
 
 export default async function ProjectDetail({ params }: { params: Promise<{ id: string }> }) {
+    const data = await getData();
     const { id } = await params
     const project = await fetchProjectDetail({ id })
     console.log(params)

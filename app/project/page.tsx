@@ -1,9 +1,8 @@
-import { fetchProject } from "@/actions/actions";
+import { fetchProject, getData } from "@/actions/actions";
 import FadeUpWhenVisible from "@/components/animations/FadeUpWhenVisible"
 import ProjectList from "@/components/project/ProjectList"
 import ProjectSkeleton from "@/components/project/ProjectSkeleton";
 import { ProjectProps } from "@/utils/type";
-import { h1 } from "motion/react-client";
 import { Metadata } from "next";
 import { Suspense } from "react";
 export const metadata: Metadata = {
@@ -11,6 +10,7 @@ export const metadata: Metadata = {
   description: "Krisapat Portfolio Project Page",
 };
 const Project = async () => {
+  const data = await getData();
   const project: ProjectProps[] = await fetchProject();
   if (project.length === 0) {
     return <p className="text-center text-gray-500">No projects available</p>

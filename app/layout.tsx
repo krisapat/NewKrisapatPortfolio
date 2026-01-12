@@ -9,7 +9,7 @@ const mitr = Mitr({
   weight: ["300", "400", "500", "600", "700"], // เลือกน้ำหนักที่ต้องการ
   display: "swap",
 })
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;

@@ -8,7 +8,7 @@ import "swiper/css/pagination"
 
 export default function LatestProjectsSection({ children }: { children: React.ReactNode }) {
     return (
-        <section>
+        <section className="h-120">
             <Swiper
                 modules={[Pagination, Autoplay]}
                 slidesPerView={1.2}
@@ -27,7 +27,7 @@ export default function LatestProjectsSection({ children }: { children: React.Re
                     640: { slidesPerView: 2 },
                     1024: { slidesPerView: 3 },
                 }}
-                className="pb-2! h-100"
+                className="pb-10! h-full"
             >
                 {Array.isArray(children) &&
                     children.map((child, index) => (
